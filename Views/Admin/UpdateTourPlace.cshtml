@@ -1,0 +1,48 @@
+﻿@{if (Session["username"] == null)
+{
+    Response.Redirect("/Home/index");
+}
+}
+
+<link href="~/Content/style.css" rel="stylesheet" />
+<link href="~/Content/table2.css" rel="stylesheet" />
+@model journey.Models.TourPLace
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<form class="pure-form pure-form-aligned" action="/Admin/UpdateConfirm2/@Model.TPId" method="post">
+    <fieldset>
+
+
+
+        <div class="pure-control-group">
+            <label for="name">TPName</label>
+            <input name="t2" type="text" placeholder="Name" value="@Model.TPName">
+        </div>
+        
+        <div class="pure-control-group">
+            <label for="name">Date</label>
+            <input name="t4" type="date" placeholder="Date" value="@Model.Date">
+        </div>
+        <div class="pure-control-group">
+            <label for="name">Time</label>
+            <input name="t5" type="time" placeholder="Time" value="@Model.Time">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="name">Duration</label>
+            <input name="t6" type="text" placeholder="Duration" value="@Model.Duration">
+        </div>
+        
+        <div class="pure-control-group">
+            <label for="name">Amount</label>
+            <input name="t7" type="number" placeholder="Amount">
+        </div>
+
+        <button type="submit" class="pure-button pure-button-primary">Update</button>
+
+    </fieldset>
+</form>
